@@ -79,20 +79,20 @@ const plugins = () =>{
     new MomentLocalesPlugin({
         localesToKeep: ['es-us', 'ru'],
     }),
-    // new FaviconsWebpackPlugin({
-    //   logo: PATHS.src + '/components/logo/img/logo-mini.svg',
-    //   cache: true,
-    //   publicPath: '',
-    //   outputPath: 'favicons',
-    //   prefix: 'favicons/',
-    //   inject: true,
-    //   lang: 'ru-RU',
-    //   favicons: {
-    //     background: '#fff',
-    //     theme_color: '#BC9CFF',
-    //     version: '1.0',
-    //   },
-    // }),
+    new FaviconsWebpackPlugin({
+      logo: PATHS.src + '/components/header/img/logo.svg',
+      cache: true,
+      publicPath: '',
+      outputPath: 'favicons',
+      prefix: 'favicons/',
+      inject: true,
+      lang: 'ru-RU',
+      favicons: {
+        background: '#fff',
+        theme_color: '#BC9CFF',
+        version: '1.0',
+      },
+    }),
   ];
 
   return base;
@@ -227,6 +227,10 @@ module.exports = {
             ],
           }
         }
+      },
+      {
+        test: /\.html$/i,
+        loader: 'html-loader',
       },
     ]
   }
